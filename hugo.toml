@@ -1,62 +1,58 @@
 baseURL = 'https://chaojean7-rgb.github.io/world-undefined/'
 languageCode = 'zh-cn'
 defaultContentLanguage = 'zh'
-title = '世界未定义'
+title = '涓栫晫鏈畾涔?
 theme = 'PaperMod'
 paginate = 10
 
-# 启用 emoji 和代码高亮
-enableEmoji = true
+# 鍚敤 emoji 鍜屼唬鐮侀珮浜?enableEmoji = true
 enableRobotsTXT = true
 
 [params]
-  # 网站描述
-  description = "世界未定义 - 一个记录想法、文章、图片和视频的个人空间"
+  # 缃戠珯鎻忚堪
+  description = "涓栫晫鏈畾涔?- 涓€涓褰曟兂娉曘€佹枃绔犮€佸浘鐗囧拰瑙嗛鐨勪釜浜虹┖闂?
   
-  # 默认图片（用于分享时显示）
-  defaultCoverImage = "/images/cover.jpg"
+  # 榛樿鍥剧墖锛堢敤浜庡垎浜椂鏄剧ず锛?  defaultCoverImage = "/images/cover.jpg"
   
-  # 作者信息
-  author = "世界未定义"
+  # 浣滆€呬俊鎭?  author = "涓栫晫鏈畾涔?
   
-  # 主页副标题
-  homeInfoParams = { Title = "欢迎来到世界未定义", Content = "这里是我的个人空间，记录生活中的想法、文章、图片和视频。" }
+  # 涓婚〉鍓爣棰?  homeInfoParams = { Title = "娆㈣繋鏉ュ埌涓栫晫鏈畾涔?, Content = "杩欓噷鏄垜鐨勪釜浜虹┖闂达紝璁板綍鐢熸椿涓殑鎯虫硶銆佹枃绔犮€佸浘鐗囧拰瑙嗛銆? }
   
-  # 社交链接（可以后续添加）
+  # 绀句氦閾炬帴锛堝彲浠ュ悗缁坊鍔狅級
   [[params.socialIcons]]
     name = "github"
     url = "https://github.com/theautodefined"
   
-  # 文章列表样式
+  # 鏂囩珷鍒楄〃鏍峰紡
   [params.editPost]
     URL = ""
-    Text = "编辑此页"
+    Text = "缂栬緫姝ら〉"
     appendFilePath = true
   
-  # 日期格式
+  # 鏃ユ湡鏍煎紡
   DateFormat = "2006-01-02"
 
-  # 目录设置
+  # 鐩綍璁剧疆
   [params.toc]
     enable = true
 
-  # 代码高亮
+  # 浠ｇ爜楂樹寒
   [params.assets]
     disableFingerprinting = true
 
-  # 搜索功能
+  # 鎼滅储鍔熻兘
   [params.search]
     enable = true
 
-  # 评论系统 (giscus)
+  # 璇勮绯荤粺 (giscus)
   [params.comments]
     enable = true
   
   [params.giscus]
-    repo = "theautodefined/world-undefined"
-    repoID = ""
+    repo = "chaojean7-rgb/world-undefined"
+    repoID = "R_kgDOTEk8wA"
     category = "Announcements"
-    categoryID = ""
+    categoryID = "DIC_kwDOTEk8wM4C_2TH"
     mapping = "pathname"
     reactionsEnabled = "1"
     emitMetadata = "0"
@@ -65,60 +61,59 @@ enableRobotsTXT = true
     lang = "zh-CN"
     loading = "lazy"
 
-# 菜单配置
+# 鑿滃崟閰嶇疆
 [[menu.main]]
   identifier = "home"
-  name = "首页"
+  name = "棣栭〉"
   url = "/"
   weight = 1
 
 [[menu.main]]
   identifier = "posts"
-  name = "文章"
+  name = "鏂囩珷"
   url = "/posts/"
   weight = 2
 
 [[menu.main]]
   identifier = "thoughts"
-  name = "想法"
+  name = "鎯虫硶"
   url = "/thoughts/"
   weight = 3
 
 [[menu.main]]
   identifier = "gallery"
-  name = "图片"
+  name = "鍥剧墖"
   url = "/gallery/"
   weight = 4
 
 [[menu.main]]
   identifier = "videos"
-  name = "视频"
+  name = "瑙嗛"
   url = "/videos/"
   weight = 5
 
 [[menu.main]]
   identifier = "links"
-  name = "链接"
+  name = "閾炬帴"
   url = "/links/"
   weight = 6
 
 [[menu.main]]
   identifier = "about"
-  name = "关于"
+  name = "鍏充簬"
   url = "/about/"
   weight = 7
 
-# 输出格式
+# 杈撳嚭鏍煎紡
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
-# 分类法
-[taxonomies]
+# 鍒嗙被娉?[taxonomies]
   category = "categories"
   tag = "tags"
   series = "series"
 
-# Markdown 渲染
+# Markdown 娓叉煋
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
