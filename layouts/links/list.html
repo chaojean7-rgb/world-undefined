@@ -1,0 +1,33 @@
+{{ define "main" }}
+<div class="post-content">
+  <h1>{{ .Title }}</h1>
+  
+  <div class="links-list">
+    {{ range .Pages }}
+      <div class="link-item">
+        <h3>
+          <a href="{{ .Params.link }}" target="_blank" rel="noopener noreferrer">
+            {{ .Title }}
+          </a>
+        </h3>
+        
+        {{ if .Description }}
+          <div class="description">
+            {{ .Description }}
+          </div>
+        {{ end }}
+        
+        {{ if .Params.category }}
+          <div class="category" style="margin-top: 0.5rem;">
+            {{ .Params.category }}
+          </div>
+        {{ end }}
+        
+        <div class="meta" style="margin-top: 0.5rem; color: var(--morandi-text-secondary);">
+          {{ .Date.Format "2006年01月02日" }}
+        </div>
+      </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

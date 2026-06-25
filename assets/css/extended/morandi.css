@@ -1,0 +1,415 @@
+/* 莫兰迪暖色系配色方案 - 世界未定义 */
+
+:root {
+  /* 莫兰迪主色调 - 温暖的米色系 */
+  --morandi-bg: #f5f0eb;
+  --morandi-bg-secondary: #ede7df;
+  --morandi-text: #4a4540;
+  --morandi-text-secondary: #7a746d;
+  
+  /* 莫兰迪强调色 */
+  --morandi-accent: #c9a87c;
+  --morandi-accent-hover: #b8946a;
+  
+  /* 活泼点缀色 */
+  --accent-yellow: #f0d58c;
+  --accent-green: #a8c5a0;
+  --accent-avocado: #b5c4a1;
+  
+  /* 莫兰迪灰调 */
+  --morandi-gray-light: #e8e2da;
+  --morandi-gray: #c5beb6;
+  --morandi-gray-dark: #8a837b;
+  
+  /* 卡片和边框 */
+  --card-bg: #ffffff;
+  --card-border: #e0d8ce;
+  --card-shadow: rgba(74, 69, 64, 0.08);
+  
+  /* 链接颜色 */
+  --link-color: #8b7355;
+  --link-hover: #6d5a43;
+  
+  /* 标题颜色 */
+  --heading-color: #3d3832;
+}
+
+/* 暗色模式 */
+[data-theme="dark"] {
+  --morandi-bg: #2c2825;
+  --morandi-bg-secondary: #35302c;
+  --morandi-text: #e0d8ce;
+  --morandi-text-secondary: #a89f95;
+  
+  --morandi-accent: #d4b896;
+  --morandi-accent-hover: #c9a87c;
+  
+  --accent-yellow: #e8c86a;
+  --accent-green: #8fb085;
+  --accent-avocado: #9aad88;
+  
+  --morandi-gray-light: #3d3832;
+  --morandi-gray: #4a4540;
+  --morandi-gray-dark: #7a746d;
+  
+  --card-bg: #35302c;
+  --card-border: #4a4540;
+  --card-shadow: rgba(0, 0, 0, 0.2);
+  
+  --link-color: #d4b896;
+  --link-hover: #e0c8a8;
+  
+  --heading-color: #f0e8dc;
+}
+
+/* 全局样式 */
+body {
+  background-color: var(--morandi-bg);
+  color: var(--morandi-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  line-height: 1.8;
+}
+
+/* 头部样式 */
+.header {
+  background-color: var(--morandi-bg-secondary);
+  border-bottom: 1px solid var(--card-border);
+}
+
+/* 导航链接 */
+.nav-link {
+  color: var(--morandi-text) !important;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--morandi-accent) !important;
+}
+
+/* 主页信息区域 */
+.home-info {
+  background: linear-gradient(135deg, var(--morandi-bg-secondary) 0%, var(--morandi-bg) 100%);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid var(--card-border);
+}
+
+.home-info h1 {
+  color: var(--heading-color);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.home-info .content {
+  color: var(--morandi-text-secondary);
+  font-size: 1.1rem;
+}
+
+/* 文章卡片 */
+.post-entry {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 2px 8px var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-entry:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 16px var(--card-shadow);
+}
+
+.post-entry h2 {
+  color: var(--heading-color);
+  margin-bottom: 0.5rem;
+}
+
+.post-entry .meta {
+  color: var(--morandi-text-secondary);
+  font-size: 0.9rem;
+}
+
+/* 标签样式 */
+.tag {
+  background-color: var(--morandi-gray-light);
+  color: var(--morandi-text);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  margin-right: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.tag:hover {
+  background-color: var(--accent-yellow);
+  color: var(--heading-color);
+}
+
+/* 分类样式 */
+.category {
+  background-color: var(--accent-green);
+  color: var(--heading-color);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+/* 文章内容样式 */
+.post-content {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  padding: 2rem;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 2px 8px var(--card-shadow);
+}
+
+.post-content h1, .post-content h2, .post-content h3 {
+  color: var(--heading-color);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.post-content p {
+  margin-bottom: 1.5rem;
+}
+
+.post-content a {
+  color: var(--link-color);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-yellow);
+  text-underline-offset: 3px;
+}
+
+.post-content a:hover {
+  color: var(--link-hover);
+}
+
+/* 图片画廊 */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+.gallery-item {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 2px 8px var(--card-shadow);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.02);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.gallery-item .caption {
+  padding: 1rem;
+  color: var(--morandi-text);
+}
+
+/* 视频嵌入 */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  margin: 1.5rem 0;
+  border-radius: 10px;
+  border: 1px solid var(--card-border);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* 链接列表 */
+.link-list {
+  list-style: none;
+  padding: 0;
+}
+
+.link-item {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 2px 8px var(--card-shadow);
+  transition: transform 0.3s ease;
+}
+
+.link-item:hover {
+  transform: translateX(5px);
+}
+
+.link-item a {
+  color: var(--link-color);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link-item a:hover {
+  color: var(--link-hover);
+}
+
+.link-item .description {
+  color: var(--morandi-text-secondary);
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* 想法/短文样式 */
+.thought-card {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--accent-yellow);
+  box-shadow: 0 2px 8px var(--card-shadow);
+}
+
+.thought-card .date {
+  color: var(--morandi-text-secondary);
+  font-size: 0.85rem;
+}
+
+/* 评论区样式 */
+.comments-section {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  padding: 2rem;
+  margin-top: 2rem;
+  border: 1px solid var(--card-border);
+}
+
+/* 按钮样式 */
+.btn {
+  background-color: var(--morandi-accent);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--morandi-accent-hover);
+}
+
+/* 搜索框样式 */
+.search-input {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  color: var(--morandi-text);
+  width: 100%;
+  max-width: 400px;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--morandi-accent);
+  box-shadow: 0 0 0 2px rgba(201, 168, 124, 0.2);
+}
+
+/* 页脚样式 */
+.footer {
+  background-color: var(--morandi-bg-secondary);
+  border-top: 1px solid var(--card-border);
+  color: var(--morandi-text-secondary);
+  padding: 2rem 0;
+  margin-top: 3rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .home-info h1 {
+    font-size: 2rem;
+  }
+  
+  .post-entry {
+    padding: 1rem;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  
+  .post-content {
+    padding: 1.5rem;
+  }
+}
+
+/* 特殊元素样式 */
+blockquote {
+  border-left: 4px solid var(--accent-avocado);
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  background-color: var(--morandi-gray-light);
+  border-radius: 0 6px 6px 0;
+}
+
+code {
+  background-color: var(--morandi-gray-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+pre {
+  background-color: var(--morandi-bg-secondary);
+  border-radius: 8px;
+  padding: 1.5rem;
+  overflow-x: auto;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.post-entry, .thought-card, .gallery-item, .link-item {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--morandi-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--morandi-gray);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--morandi-gray-dark);
+}

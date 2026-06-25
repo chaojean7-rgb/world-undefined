@@ -1,0 +1,38 @@
+{{ define "main" }}
+<div class="post-content">
+  <h1>{{ .Title }}</h1>
+  
+  <div class="videos-list">
+    {{ range .Pages }}
+      <div class="video-item" style="margin-bottom: 2rem;">
+        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        
+        {{ if .Description }}
+          <p>{{ .Description }}</p>
+        {{ end }}
+        
+        {{ if .Params.video_url }}
+          <div class="video-container">
+            {{ if in .Params.video_url "bilibili" }}
+              <iframe src="//player.bilibili.com/player.html?bvid={{ .Params.bvid }}&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+            {{ else if in .Params.video_url "youtube" }}
+              <iframe src="https://www.youtube.com/embed/{{ .Params.youtube_id }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            {{ end }}
+          </div>
+        {{ end }}
+        
+        <div class="meta" style="margin-top: 0.5rem; color: var(--morandi-text-secondary);">
+          {{ .Date.Format "2006年01月02日" }}
+          {{ if .Params.tags }}
+            <span style="margin-left: 1rem;">
+              {{ range .Params.tags }}
+                <span class="tag">{{ . }}</span>
+              {{ end }}
+            </span>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

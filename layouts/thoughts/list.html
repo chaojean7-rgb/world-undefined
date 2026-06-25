@@ -1,0 +1,30 @@
+{{ define "main" }}
+<div class="post-content">
+  <h1>{{ .Title }}</h1>
+  
+  <div class="thoughts-list">
+    {{ range .Pages }}
+      <div class="thought-card">
+        <div class="date">
+          {{ .Date.Format "2006年01月02日" }}
+          {{ if .Params.tags }}
+            <span style="margin-left: 1rem;">
+              {{ range .Params.tags }}
+                <span class="tag">{{ . }}</span>
+              {{ end }}
+            </span>
+          {{ end }}
+        </div>
+        
+        <div class="content" style="margin-top: 1rem;">
+          {{ .Content }}
+        </div>
+        
+        <div style="margin-top: 1rem;">
+          <a href="{{ .Permalink }}">查看完整内容</a>
+        </div>
+      </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

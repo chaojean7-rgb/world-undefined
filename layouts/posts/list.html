@@ -1,0 +1,43 @@
+{{ define "main" }}
+<div class="post-content">
+  <h1>{{ .Title }}</h1>
+  
+  <div class="posts-list">
+    {{ range .Pages }}
+      <div class="post-entry">
+        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        
+        <div class="meta" style="margin-bottom: 0.5rem; color: var(--morandi-text-secondary);">
+          <span>{{ .Date.Format "2006年01月02日" }}</span>
+          
+          {{ if .Params.categories }}
+            <span style="margin-left: 1rem;">
+              {{ range .Params.categories }}
+                <span class="category">{{ . }}</span>
+              {{ end }}
+            </span>
+          {{ end }}
+          
+          {{ if .Params.tags }}
+            <span style="margin-left: 1rem;">
+              {{ range .Params.tags }}
+                <span class="tag">{{ . }}</span>
+              {{ end }}
+            </span>
+          {{ end }}
+        </div>
+        
+        {{ if .Description }}
+          <div class="description">
+            {{ .Description }}
+          </div>
+        {{ end }}
+        
+        <div style="margin-top: 1rem;">
+          <a href="{{ .Permalink }}">阅读全文</a>
+        </div>
+      </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

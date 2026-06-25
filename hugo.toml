@@ -1,0 +1,130 @@
+baseURL = 'https://theautodefined.github.io/'
+languageCode = 'zh-cn'
+defaultContentLanguage = 'zh'
+title = '世界未定义'
+theme = 'PaperMod'
+paginate = 10
+
+# 启用 emoji 和代码高亮
+enableEmoji = true
+enableRobotsTXT = true
+
+[params]
+  # 网站描述
+  description = "世界未定义 - 一个记录想法、文章、图片和视频的个人空间"
+  
+  # 默认图片（用于分享时显示）
+  defaultCoverImage = "/images/cover.jpg"
+  
+  # 作者信息
+  author = "世界未定义"
+  
+  # 主页副标题
+  homeInfoParams = { Title = "欢迎来到世界未定义", Content = "这里是我的个人空间，记录生活中的想法、文章、图片和视频。" }
+  
+  # 社交链接（可以后续添加）
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/theautodefined"
+  
+  # 文章列表样式
+  [params.editPost]
+    URL = ""
+    Text = "编辑此页"
+    appendFilePath = true
+  
+  # 日期格式
+  DateFormat = "2006-01-02"
+
+  # 目录设置
+  [params.toc]
+    enable = true
+
+  # 代码高亮
+  [params.assets]
+    disableFingerprinting = true
+
+  # 搜索功能
+  [params.search]
+    enable = true
+
+  # 评论系统 (giscus)
+  [params.comments]
+    enable = true
+  
+  [params.giscus]
+    repo = "theautodefined/world-undefined"
+    repoID = ""
+    category = "Announcements"
+    categoryID = ""
+    mapping = "pathname"
+    reactionsEnabled = "1"
+    emitMetadata = "0"
+    inputPosition = "top"
+    theme = "light"
+    lang = "zh-CN"
+    loading = "lazy"
+
+# 菜单配置
+[[menu.main]]
+  identifier = "home"
+  name = "首页"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  identifier = "posts"
+  name = "文章"
+  url = "/posts/"
+  weight = 2
+
+[[menu.main]]
+  identifier = "thoughts"
+  name = "想法"
+  url = "/thoughts/"
+  weight = 3
+
+[[menu.main]]
+  identifier = "gallery"
+  name = "图片"
+  url = "/gallery/"
+  weight = 4
+
+[[menu.main]]
+  identifier = "videos"
+  name = "视频"
+  url = "/videos/"
+  weight = 5
+
+[[menu.main]]
+  identifier = "links"
+  name = "链接"
+  url = "/links/"
+  weight = 6
+
+[[menu.main]]
+  identifier = "about"
+  name = "关于"
+  url = "/about/"
+  weight = 7
+
+# 输出格式
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+# 分类法
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"
+
+# Markdown 渲染
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = false
+    style = "monokai"

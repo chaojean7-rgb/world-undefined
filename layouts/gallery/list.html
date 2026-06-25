@@ -1,0 +1,21 @@
+{{ define "main" }}
+<div class="post-content">
+  <h1>{{ .Title }}</h1>
+  
+  <div class="gallery-grid">
+    {{ range .Pages }}
+      <div class="gallery-item">
+        {{ if .Params.image }}
+          <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
+        {{ end }}
+        <div class="caption">
+          <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+          {{ if .Description }}
+            <p>{{ .Description }}</p>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
